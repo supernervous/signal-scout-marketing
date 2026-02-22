@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     description:
       "Transform electronic spectral patterns into actionable intelligence through advanced multi-protocol monitoring and ML-powered analysis.",
     type: "website",
-    // Add your URL here when deployed
-    // url: "https://signalscout.com",
   },
 };
 
@@ -49,17 +47,21 @@ export default function RootLayout({
               (function() {
                 try {
                   var mode = localStorage.getItem('theme');
-                  if (mode === 'dark' || (!mode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  if (mode === 'light') {
+                    // explicit light — don't add dark
+                  } else {
                     document.documentElement.classList.add('dark');
                   }
-                } catch (e) {}
+                } catch (e) {
+                  document.documentElement.classList.add('dark');
+                }
               })();
             `,
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased scanlines`}
       >
         {children}
       </body>

@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
   { label: "Solution", href: "#solution" },
   { label: "Technology", href: "#architecture" },
-  { label: "Timeline", href: "#milestones" },
+  { label: "Deployment", href: "#deployment" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
@@ -18,27 +17,34 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 font-semibold">
-          <Radio className="h-6 w-6 text-primary" />
-          <span className="text-lg">Signal Scout</span>
+        <a
+          href="#hero"
+          className="flex items-center gap-2.5 font-mono text-sm uppercase tracking-[0.15em] text-foreground"
+        >
+          <Radio className="h-4 w-4 text-primary" />
+          Signal Scout
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-0.5 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="px-3 py-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </a>
           ))}
           <ThemeToggle />
-          <Button asChild size="sm" className="ml-2">
+          <Button
+            asChild
+            size="sm"
+            className="ml-3 font-mono text-[11px] uppercase tracking-wider"
+          >
             <a href="#contact">Get Started</a>
           </Button>
         </div>
@@ -59,19 +65,22 @@ export function Navbar() {
 
       {/* Mobile nav */}
       {open && (
-        <div className="border-t bg-background md:hidden">
+        <div className="border-t border-border/40 bg-background/95 backdrop-blur-xl md:hidden">
           <div className="space-y-1 px-4 py-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="block px-3 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
             ))}
-            <Button asChild className="mt-2 w-full">
+            <Button
+              asChild
+              className="mt-2 w-full font-mono text-xs uppercase tracking-wider"
+            >
               <a href="#contact" onClick={() => setOpen(false)}>
                 Get Started
               </a>

@@ -25,9 +25,6 @@ export default function Home() {
         <Readiness />
         <Milestones />
         <Team />
-        {/* Add pricing section here */}
-        {/* Add testimonials/case studies section here */}
-        {/* Add FAQ accordion section here */}
         <CTA />
       </main>
       <Footer />
