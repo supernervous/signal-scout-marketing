@@ -472,7 +472,7 @@ export function AnalysisViz() {
                     <circle
                       cx={device.x}
                       cy={device.y}
-                      r="14"
+                      r="18"
                       fill="hsl(225 30% 8%)"
                       stroke={color}
                       strokeWidth="1.5"
@@ -484,17 +484,6 @@ export function AnalysisViz() {
                       textAnchor="middle"
                       dominantBaseline="central"
                       fill={color}
-                      fontSize="13"
-                      fontFamily="var(--font-geist-mono)"
-                      fontWeight="bold"
-                    >
-                      {typeLetters[device.type]}
-                    </text>
-                    <text
-                      x={device.x}
-                      y={device.y - 20}
-                      textAnchor="middle"
-                      fill="hsl(215 20% 60%)"
                       fontSize="11"
                       fontFamily="var(--font-geist-mono)"
                       fontWeight="bold"
