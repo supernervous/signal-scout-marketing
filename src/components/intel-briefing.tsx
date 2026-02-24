@@ -96,14 +96,28 @@ const findings = [
       </>
     ),
   },
+  {
+    text: (
+      <>
+        Network topology is consistent with a compartmented cell structure.{" "}
+        <span className="text-primary">P3</span> is the only subject with
+        confirmed ties to both groupings, suggesting a coordinator or
+        liaison role. No direct{" "}
+        <span className="text-amber-400">P0</span>–
+        <span className="text-amber-400">P4</span> contact has been
+        observed, which may indicate deliberate operational separation.
+      </>
+    ),
+  },
 ];
 
 const recommendations = [
   "Elevate P3 to Priority Collection Target — expand TPMS corridor monitoring on I-5, I-90, I-94",
   "Cross-reference P0 device signature (B01) against Portland-area field intelligence",
-  "Task additional collection assets at anticipated June protest/event sites",
+  "Task additional collection assets at anticipated June protest/event sites in both Cell Alpha (Upper Midwest) and Cell Bravo (Pacific NW) areas of operation",
   "Request interstate TPMS corridor analysis for T02 across Pacific NW highway network",
-  "Coordinate with field offices in Minneapolis, Portland, Seattle, and Denver for ground truth validation",
+  "Priority: Determine whether P0 and P4 have independent contact — this would confirm Cell Bravo as an established grouping rather than a provisional designation",
+  "Coordinate with field offices in Minneapolis, Portland, Seattle, and Denver for ground truth validation of cell membership",
 ];
 
 const mapNodes = [
@@ -362,6 +376,190 @@ export function IntelBriefing() {
             </ol>
           </div>
 
+          {/* ── Network Analysis ────────────────────────── */}
+          <div className="border-b border-border/30 px-6 py-4">
+            <h4 className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              Network Analysis — Probable Cell Structure
+            </h4>
+            <p className="mb-4 font-mono text-xs leading-relaxed text-foreground/80">
+              Co-location frequency, device proximity duration, and coordinated
+              movement patterns indicate two overlapping operational groupings
+              linked by{" "}
+              <span className="font-bold text-primary">P3</span> as a
+              bridge node.
+            </p>
+
+            {/* Cell diagram */}
+            <div className="overflow-x-auto">
+              <svg
+                viewBox="0 0 900 200"
+                className="min-w-[500px]"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                {/* Cell A background */}
+                <rect
+                  x={55}
+                  y={20}
+                  width={340}
+                  height={160}
+                  rx={4}
+                  fill="hsl(187 78% 46%)"
+                  opacity={0.04}
+                  stroke="hsl(187 78% 46%)"
+                  strokeWidth={1}
+                  strokeDasharray="6 4"
+                  strokeOpacity={0.2}
+                />
+                <text
+                  x={225}
+                  y={42}
+                  textAnchor="middle"
+                  fill="hsl(187 78% 56%)"
+                  fontSize="9"
+                  fontFamily="var(--font-geist-mono)"
+                  fontWeight="bold"
+                  letterSpacing="0.15em"
+                >
+                  CELL ALPHA — UPPER MIDWEST
+                </text>
+
+                {/* Cell B background */}
+                <rect
+                  x={505}
+                  y={20}
+                  width={340}
+                  height={160}
+                  rx={4}
+                  fill="hsl(40 70% 50%)"
+                  opacity={0.04}
+                  stroke="hsl(40 70% 50%)"
+                  strokeWidth={1}
+                  strokeDasharray="6 4"
+                  strokeOpacity={0.2}
+                />
+                <text
+                  x={675}
+                  y={42}
+                  textAnchor="middle"
+                  fill="hsl(40 70% 60%)"
+                  fontSize="9"
+                  fontFamily="var(--font-geist-mono)"
+                  fontWeight="bold"
+                  letterSpacing="0.15em"
+                >
+                  CELL BRAVO — PACIFIC NW
+                </text>
+
+                {/* ── Edges ─── */}
+                {/* P1–P3: HIGH */}
+                <line x1={140} y1={100} x2={300} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
+                {/* P6–P3: HIGH */}
+                <line x1={140} y1={155} x2={300} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
+                {/* P1–P6: MODERATE (both at Minneapolis, indirect) */}
+                <line x1={140} y1={100} x2={140} y2={155} stroke="hsl(187 78% 46%)" strokeWidth={1} strokeDasharray="4 4" opacity={0.35} />
+
+                {/* P3–P0: MODERATE */}
+                <line x1={450} y1={100} x2={600} y2={100} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
+                {/* P3–P4: MODERATE */}
+                <line x1={450} y1={100} x2={600} y2={155} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
+
+                {/* P3 bridge connector */}
+                <line x1={300} y1={100} x2={450} y2={100} stroke="hsl(215 20% 50%)" strokeWidth={1.5} strokeDasharray="3 6" opacity={0.4} />
+                <text
+                  x={375}
+                  y={90}
+                  textAnchor="middle"
+                  fill="hsl(215 20% 55%)"
+                  fontSize="8"
+                  fontFamily="var(--font-geist-mono)"
+                >
+                  BRIDGE
+                </text>
+
+                {/* Edge confidence labels */}
+                {/* P1–P3 */}
+                <text x={220} y={93} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
+                {/* P6–P3 */}
+                <text x={235} y={140} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
+                {/* P1–P6 */}
+                <text x={115} y={130} textAnchor="middle" fill="hsl(215 20% 55%)" fontSize="7" fontFamily="var(--font-geist-mono)">MOD</text>
+                {/* P3–P0 */}
+                <text x={525} y={93} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
+                {/* P3–P4 */}
+                <text x={540} y={140} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
+
+                {/* ── Person nodes ─── */}
+                {[
+                  { id: "P1", x: 140, y: 100, primary: true },
+                  { id: "P6", x: 140, y: 155, primary: true },
+                  { id: "P3", x: 375, y: 100, primary: true },
+                  { id: "P0", x: 600, y: 100, primary: false },
+                  { id: "P4", x: 600, y: 155, primary: false },
+                ].map((node) => (
+                  <g key={node.id}>
+                    <circle
+                      cx={node.x}
+                      cy={node.y}
+                      r={node.id === "P3" ? 22 : 18}
+                      fill="hsl(225 30% 8%)"
+                      stroke={node.primary ? "hsl(187 78% 46%)" : "hsl(40 70% 50%)"}
+                      strokeWidth={node.id === "P3" ? 2.5 : 1.5}
+                      opacity={node.id === "P0" ? 0.7 : 0.95}
+                    />
+                    <text
+                      x={node.x}
+                      y={node.y + 1}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fill={node.primary ? "hsl(187 78% 60%)" : "hsl(40 70% 60%)"}
+                      fontSize={node.id === "P3" ? "14" : "12"}
+                      fontFamily="var(--font-geist-mono)"
+                      fontWeight="bold"
+                    >
+                      {node.id}
+                    </text>
+                  </g>
+                ))}
+              </svg>
+            </div>
+
+            {/* Cell descriptions */}
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <div className="border-l-2 border-primary/40 pl-3">
+                <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">
+                  Cell Alpha — Upper Midwest
+                </p>
+                <p className="font-mono text-[11px] leading-relaxed text-foreground/80">
+                  <span className="font-bold text-primary">P1</span>,{" "}
+                  <span className="font-bold text-primary">P3</span>,{" "}
+                  <span className="font-bold text-primary">P6</span> —{" "}
+                  <span className="text-emerald-400">HIGH</span> association
+                  confidence. All three co-located at Minneapolis May Day Rally
+                  with 4+ hours of overlapping device presence. P1 and P6
+                  demonstrate coordinated arrival/departure timing consistent
+                  with pre-arranged meeting. P3 serves as the only member with
+                  confirmed out-of-region travel.
+                </p>
+              </div>
+              <div className="border-l-2 border-amber-500/40 pl-3">
+                <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-400">
+                  Cell Bravo — Pacific NW
+                </p>
+                <p className="font-mono text-[11px] leading-relaxed text-foreground/80">
+                  <span className="font-bold text-primary">P3</span>,{" "}
+                  <span className="font-bold text-amber-400">P0</span>,{" "}
+                  <span className="font-bold text-amber-400">P4</span> —{" "}
+                  <span className="text-amber-400">MODERATE</span> association
+                  confidence. P0 and P4 each share a single co-location event
+                  with P3 but have no confirmed direct contact with each other.
+                  Classification as a cell is provisional — further collection
+                  required to confirm P0–P4 linkage. P0&apos;s low device
+                  attribution (62%) adds uncertainty.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* ── Assessment ─────────────────────────────── */}
           <div className="border-b border-border/30 px-6 py-4">
             <h4 className="mb-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -372,19 +570,30 @@ export function IntelBriefing() {
               <span className="font-bold text-amber-400">
                 MODERATE CONFIDENCE
               </span>{" "}
-              as a mobile coordinator operating across the Pacific Northwest
-              and Upper Midwest corridor. The consistent device carry pattern,
-              combined with absence of cellular/IMSI attribution, suggests a
-              subject with awareness of digital surveillance capabilities. The
-              co-location pattern with four separate subjects at
-              protest and government facility sites over a 22-day window is
-              consistent with an organized operational cadence.
+              as a mobile coordinator bridging two distinct operational
+              groupings across the Pacific Northwest and Upper Midwest. The
+              consistent device carry pattern, combined with absence of
+              cellular/IMSI attribution, suggests a subject with awareness of
+              digital surveillance capabilities. P3&apos;s role as the sole link
+              between Cell Alpha (P1, P6) and Cell Bravo (P0, P4) is consistent
+              with a compartmented organizational structure designed to limit
+              exposure — a hallmark of distributed activist networks.
+            </p>
+            <p className="mb-3 font-mono text-xs leading-relaxed text-foreground/80">
+              Cell Alpha (P1, P3, P6) is assessed as the more cohesive grouping.
+              The Minneapolis co-location demonstrated coordinated behavior patterns
+              including synchronized arrival timing and shared proximity duration
+              exceeding 4 hours. Cell Bravo remains provisional — P0 and P4
+              have no confirmed direct contact, and their association is inferred
+              solely through P3 as an intermediary.
             </p>
             <p className="font-mono text-xs leading-relaxed text-foreground/80">
               P0 remains the most significant intelligence gap.
               Single-device attribution at 62% confidence is insufficient for
               positive identification, yet co-location with P3 at a sensitive
               government facility warrants elevated collection priority.
+              Establishing whether P0 has independent contact with P4 would
+              significantly strengthen the Cell Bravo designation.
             </p>
           </div>
 
