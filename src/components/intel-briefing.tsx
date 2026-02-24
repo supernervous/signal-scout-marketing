@@ -605,7 +605,7 @@ export function IntelBriefing() {
             <ul className="space-y-2">
               {recommendations.map((rec, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
+                  <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
                   <span className="font-mono text-xs leading-relaxed text-foreground/80">
                     {rec}
                   </span>
