@@ -452,21 +452,21 @@ export function IntelBriefing() {
 
                 {/* ── Edges ─── */}
                 {/* P1–P3: HIGH */}
-                <line x1={140} y1={100} x2={300} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
+                <line x1={225} y1={100} x2={395} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
                 {/* P6–P3: HIGH */}
-                <line x1={140} y1={155} x2={300} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
+                <line x1={225} y1={155} x2={395} y2={100} stroke="hsl(187 78% 46%)" strokeWidth={2} opacity={0.6} />
                 {/* P1–P6: MODERATE (both at Minneapolis, indirect) */}
-                <line x1={140} y1={100} x2={140} y2={155} stroke="hsl(187 78% 46%)" strokeWidth={1} strokeDasharray="4 4" opacity={0.35} />
+                <line x1={225} y1={100} x2={225} y2={155} stroke="hsl(187 78% 46%)" strokeWidth={1} strokeDasharray="4 4" opacity={0.35} />
 
                 {/* P3–P0: MODERATE */}
-                <line x1={450} y1={100} x2={600} y2={100} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
+                <line x1={505} y1={100} x2={675} y2={100} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
                 {/* P3–P4: MODERATE */}
-                <line x1={450} y1={100} x2={600} y2={155} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
+                <line x1={505} y1={100} x2={675} y2={155} stroke="hsl(40 70% 50%)" strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5} />
 
                 {/* P3 bridge connector */}
-                <line x1={300} y1={100} x2={450} y2={100} stroke="hsl(215 20% 50%)" strokeWidth={1.5} strokeDasharray="3 6" opacity={0.4} />
+                <line x1={395} y1={100} x2={505} y2={100} stroke="hsl(215 20% 50%)" strokeWidth={1.5} strokeDasharray="3 6" opacity={0.4} />
                 <text
-                  x={375}
+                  x={450}
                   y={90}
                   textAnchor="middle"
                   fill="hsl(215 20% 55%)"
@@ -478,23 +478,23 @@ export function IntelBriefing() {
 
                 {/* Edge confidence labels */}
                 {/* P1–P3 */}
-                <text x={220} y={93} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
+                <text x={310} y={93} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
                 {/* P6–P3 */}
-                <text x={235} y={140} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
+                <text x={320} y={140} textAnchor="middle" fill="hsl(187 78% 56%)" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="bold">HIGH</text>
                 {/* P1–P6 */}
-                <text x={115} y={130} textAnchor="middle" fill="hsl(215 20% 55%)" fontSize="7" fontFamily="var(--font-geist-mono)">MOD</text>
+                <text x={200} y={130} textAnchor="middle" fill="hsl(215 20% 55%)" fontSize="7" fontFamily="var(--font-geist-mono)">MOD</text>
                 {/* P3–P0 */}
-                <text x={525} y={93} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
+                <text x={590} y={93} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
                 {/* P3–P4 */}
-                <text x={540} y={140} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
+                <text x={580} y={140} textAnchor="middle" fill="hsl(40 70% 60%)" fontSize="8" fontFamily="var(--font-geist-mono)">MODERATE</text>
 
                 {/* ── Person nodes ─── */}
                 {[
-                  { id: "P1", x: 140, y: 100, primary: true },
-                  { id: "P6", x: 140, y: 155, primary: true },
-                  { id: "P3", x: 375, y: 100, primary: true },
-                  { id: "P0", x: 600, y: 100, primary: false },
-                  { id: "P4", x: 600, y: 155, primary: false },
+                  { id: "P1", x: 225, y: 100, primary: true },
+                  { id: "P6", x: 225, y: 155, primary: true },
+                  { id: "P3", x: 450, y: 100, primary: true },
+                  { id: "P0", x: 675, y: 100, primary: false },
+                  { id: "P4", x: 675, y: 155, primary: false },
                 ].map((node) => (
                   <g key={node.id}>
                     <circle
