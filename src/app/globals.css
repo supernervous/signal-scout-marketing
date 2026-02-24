@@ -109,6 +109,61 @@ body {
   }
 }
 
+/* ── Custom scrollbar ─────────────────────────────────── */
+/* Firefox */
+*,
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--background));
+}
+.dark,
+.dark * {
+  scrollbar-color: hsl(var(--primary) / 0.25) hsl(225 35% 4%);
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+.dark::-webkit-scrollbar-track,
+.dark ::-webkit-scrollbar-track {
+  background: hsl(225 30% 5%);
+  border-left: 1px solid hsl(var(--border) / 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+.dark::-webkit-scrollbar-thumb,
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.35);
+  border-radius: 6px;
+  border: 1px solid hsl(var(--primary) / 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+.dark::-webkit-scrollbar-thumb:hover,
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.55);
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.2);
+}
+
+::-webkit-scrollbar-corner {
+  background: hsl(var(--background));
+}
+.dark::-webkit-scrollbar-corner,
+.dark ::-webkit-scrollbar-corner {
+  background: hsl(225 35% 4%);
+}
+
 /* ── Scan-line overlay ─────────────────────────────────── */
 .scanlines::after {
   content: "";
