@@ -82,7 +82,7 @@ const jsonLd = {
     "Signal Scout — passive multi-protocol signal intelligence platform for law enforcement and government agencies.",
   contactPoint: {
     "@type": "ContactPoint",
-    email: "contact@nervousenergy.com",
+    email: process.env.CONTACT_EMAIL ?? "contact@nervous-energy.com",
     contactType: "sales",
   },
   sameAs: [],

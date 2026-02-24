@@ -31,7 +31,7 @@ export async function submitContactForm(
   try {
     await resend.emails.send({
       from: "Signal Scout <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL ?? "contact@nervousenergy.com",
+      to: process.env.CONTACT_EMAIL ?? "contact@nervous-energy.com",
       replyTo: email,
       subject: `Signal Scout Inquiry — ${name}${org ? ` (${org})` : ""}`,
       html: `

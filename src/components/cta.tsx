@@ -169,10 +169,10 @@ export function CTA() {
             <p className="mt-4 text-center font-mono text-[10px] text-muted-foreground">
               Or email us directly at{" "}
               <a
-                href="mailto:contact@nervousenergy.com"
+                href="mailto:contact@nervous-energy.com"
                 className="text-primary/60 hover:text-primary"
               >
-                contact@nervousenergy.com
+                contact@nervous-energy.com
               </a>
             </p>
           </form>
